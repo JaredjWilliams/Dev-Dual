@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+.visualizer {
+  border : 1px solid #000;
+}/* You can add global styles to this file, and also import other style files */
+
+.row-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.column-container {
+  display: flex;
+  flex-direction: column;
+}
