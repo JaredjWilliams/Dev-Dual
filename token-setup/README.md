@@ -20,6 +20,7 @@ GitHub uses OAuth2 authentication on it's API to restrict access to private rout
 
 5) In the token generation screen give the token any description you want and select `public_repo` under the `repo` selection and all of the `user` options.
 
+
 ![new token form](./new-token.png)
 
 6) Generate the token and copy the newly generated token string.
