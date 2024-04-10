@@ -1,0 +1,13 @@
+
+<div class="visualizer">
+   <div class="visualizer row-container">
+     <img [src]="avatar" class="profile-pic">
+     <div class="visualizer column-container">
+       <div *ngFor="let entry of entries">
+         <app-field-value [entry]="entry"></app-field-value>
+       </div>
+
+     </div>
+   </div>
+
+</div>

@@ -23,4 +23,8 @@ export class UserService {
     return data;
   }
 
+  getAvatar(url : string ) {
+    return this.http.get(url, {responseType: 'blob'});
+  }
+
 }
