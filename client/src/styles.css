@@ -1,3 +1,5 @@
+@import url(https://unpkg.com/bootstrap@4.6.0/dist/css/bootstrap.min.css);
+
 .visualizer {
   border : 1px solid #000;
 }/* You can add global styles to this file, and also import other style files */
@@ -10,4 +12,36 @@
 .column-container {
   display: flex;
   flex-direction: column;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.round-corners {
+  border-radius: 15px;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-items-center {
+  align-items: center;
 }

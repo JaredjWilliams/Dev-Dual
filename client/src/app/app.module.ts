@@ -14,6 +14,7 @@ import { UserService } from 'src/user.service';
 import { UserInfoComponent } from './Components/user-info/user-info.component';
 import { ResultsComponent } from './Components/results/results.component';
 import { FieldValueComponent } from './Components/field-value/field-value.component';
+import { KeyConverter} from "./Transformers/KeyConverter.pipe";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FieldValueComponent } from './Components/field-value/field-value.compon
     TextInputComponent,
     UserInfoComponent,
     ResultsComponent,
-    FieldValueComponent
+    FieldValueComponent,
+    KeyConverter
   ],
   imports: [
     BrowserModule,
