@@ -1,5 +1,20 @@
 .profile-pic {
   border-radius: 50%;
-  height: 25%;
-  width: 25%;
+  height: 118px;
+  width: 118px;
+}
+
+.container {
+  width: 649px;
+}
+
+.image-div {
+  width : 200px;
+  display: flex;;
+}
+
+.dynamic-div {
+  min-height: 50px;
+  max-height: 480px;
+  overflow: auto;
 }

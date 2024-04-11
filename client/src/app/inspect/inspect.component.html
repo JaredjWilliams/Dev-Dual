@@ -12,7 +12,7 @@
   <button class="submit-button" (click)="onSubmit()">Inspect</button>
   <br />
   <br />
-  <div *ngIf="username">
-
+  <div *ngIf="profiles.length === 1">
+    <app-results [profiles]="profiles"></app-results>
   </div>
 </div>

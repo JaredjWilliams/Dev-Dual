@@ -1,7 +1,8 @@
-<div class="row-container">
-  <div class="key">
-    {{entry[0]}}
+<div class="row-container p-1 align-items-center">
+  <div class="key justify-center flex-align-center">
+    {{entry[0] | keyConverter}}
   </div>
-  <div>
+  <div class="value justify-center flex-align-center pl-2">
     {{entry[1]}}
+  </div>
 </div>

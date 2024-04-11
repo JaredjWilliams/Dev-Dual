@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { UserService } from 'src/user.service';
+import {objectsToProfiles, objectToProfile} from "../Transformers/JsonToProfile";
+import {Profile} from "../models/profile";
 
 @Component({
   selector: 'app-inspect',
@@ -9,6 +11,7 @@ import { UserService } from 'src/user.service';
 export class InspectComponent implements OnInit {
 
   username: string = ""
+  profiles: Profile[] = [];
 
 
   constructor(private userService: UserService) { }
@@ -21,7 +24,9 @@ export class InspectComponent implements OnInit {
   }
 
   onSubmit() {
-    this.userService.inspectUser(this.username);
+    this.userService.inspectUser(this.username)
+      .then(res => objectToProfile(res))
+      .then(profiles => this.profiles = [profiles])
   }
 
 
