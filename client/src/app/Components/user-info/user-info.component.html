@@ -12,6 +12,7 @@
 
 <div class="visualizer p-2 m-2 flex-start shadow round-corners container">
    <div class="row-container p-2 flex-align-center space-around">
+
      <div class="column-container image-div flex-align-center">
        <img [src]="avatar" class="profile-pic">
        <ng-container *ngIf="profile else profileNotFound">
@@ -21,7 +22,6 @@
        <ng-template #profileNotFound>
          <p class="text-center">Profile not found</p>
        </ng-template>
-
      </div>
 
 
@@ -29,8 +29,7 @@
        <div *ngFor="let entry of entries">
          <app-field-value [entry]="entry"></app-field-value>
        </div>
-
      </div>
-   </div>
 
+   </div>
 </div>
