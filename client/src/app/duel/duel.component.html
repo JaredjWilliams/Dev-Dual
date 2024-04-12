@@ -21,7 +21,10 @@
   <br />
   <br />
 <!--  switch back to users.length === 2 when done-->
-  <div *ngIf="true">
-    <app-results [profiles]="profiles"></app-results>
+  <div>
+    <app-results
+      [profiles]="profiles"
+      [errorMessage]="errorMessage"
+    ></app-results>
   </div>
 </div>
