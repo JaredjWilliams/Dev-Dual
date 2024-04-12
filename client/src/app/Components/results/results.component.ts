@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {User} from "../../models/user";
 import {Profile} from "../../models/profile";
 
@@ -10,6 +10,7 @@ import {Profile} from "../../models/profile";
 export class ResultsComponent implements OnInit {
 
   @Input() profiles: Profile[] = [];
+  @Input() errorMessage: string = "";
 
   constructor() { }
 

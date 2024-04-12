@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/user.service';
-import {jsonToProfile, objectsToProfiles} from "../Transformers/JsonToProfile";
+import {jsonToProfile, jsonToProfiles} from "../Transformers/JsonToProfile";
 import {Profile} from "../models/profile";
-import {TEST_USERS} from "../../seeder";
+import {errorMessage} from "../utils/utils";
 
 @Component({
   selector: 'app-duel',
@@ -12,6 +12,7 @@ import {TEST_USERS} from "../../seeder";
 export class DuelComponent implements OnInit {
   usernameOne: string = ""
   usernameTwo: string = ""
+  errorMessage: string = ""
 
   profiles : Profile[] = []
 
@@ -30,9 +31,13 @@ export class DuelComponent implements OnInit {
   }
 
   onSubmit() {
-    this.userService.duelUsers(this.usernameOne, this.usernameTwo)
-      .then((data: any) => objectsToProfiles(data))
+    this.userService.duelUsers(this.usernameOne, this.usernameTwo).toPromise()
+      .then((data: any) => jsonToProfiles(data))
       .then((profiles) => this.profiles = profiles)
       .then(() => console.log(this.profiles))
+      .catch(error => {
+        this.errorMessage = errorMessage(error.status);
+        console.log(this.errorMessage)
+      })
   }
 }

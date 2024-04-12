@@ -1,6 +1,15 @@
 
-<div class="row-container">
+<div class="row-container" >
   <ng-container *ngFor="let profile of profiles">
     <app-user-info [profile]="profile"></app-user-info>
   </ng-container>
 </div>
+
+
+  <div *ngIf="errorMessage.length > 0" class="error-message">
+    {{errorMessage}}
+  </div>
+
+
+
+
