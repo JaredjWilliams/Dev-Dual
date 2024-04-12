@@ -12,3 +12,9 @@ export const errorMessage = (status : number ) => {
             return 'Something went wrong.';
     }
 }
+
+export const formatEntries = (entries : [string, any][]) => {
+  return [...Array(entryOrder.length)].map((_, index) => entries.find((entry : any) => entry[0] === entryOrder[index])!)
+}
+
+const entryOrder  = ['username', 'name', 'location', 'titles', 'favorite-language', 'total-stars', 'highest-starred', 'public-repos', 'perfect-repos', 'followers', 'following']

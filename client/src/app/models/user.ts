@@ -1,12 +1,6 @@
 import {Expose, Transform} from "class-transformer";
 
-interface UserProps {
-  [key: string]: number | undefined | string | [string];
-}
-
-export class User implements UserProps {
-
-
+export class User {
 
   @Transform(({  value }) => value, { toClassOnly: true })
   @Expose({ name: 'total-stars' })
@@ -18,12 +12,12 @@ export class User implements UserProps {
     location: string,
     titles: [string],
     favoriteLanguage: string,
+    totalStars: number,
     publicRepos: number,
     perfectRepos: number,
     followers: number,
     following: number,
-  ) {
-  }
+  ) { }
 
   [key: string]: number | undefined | string | [string];
 

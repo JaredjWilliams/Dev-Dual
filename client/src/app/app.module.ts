@@ -15,6 +15,9 @@ import { UserInfoComponent } from './Components/user-info/user-info.component';
 import { ResultsComponent } from './Components/results/results.component';
 import { FieldValueComponent } from './Components/field-value/field-value.component';
 import { KeyConverter} from "./Transformers/KeyConverter.pipe";
+import {ValueConverter} from "./Transformers/ValueConverter.pipe";
+
+
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { KeyConverter} from "./Transformers/KeyConverter.pipe";
     UserInfoComponent,
     ResultsComponent,
     FieldValueComponent,
-    KeyConverter
+    KeyConverter,
+    ValueConverter
   ],
   imports: [
     BrowserModule,

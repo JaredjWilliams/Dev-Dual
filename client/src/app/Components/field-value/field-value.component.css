@@ -1,7 +1,7 @@
 .key {
   box-sizing: border-box;
   height: 26px;
-  width: 110px;
+  width: 115px;
 
   background: #E1F1FF;
   border: 1px solid rgba(0, 0, 0, 0.75);
@@ -13,6 +13,10 @@
 
 .value {
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   display: flex;
+}
+
+.titles-field-value {
+  font-size: 13px
 }

@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class FieldValueComponent implements OnInit {
 
-  @Input() entry : [string, any] = ['', ''];
+  @Input() entry : [string, any] = [",", ""];
 
   constructor() { }
 

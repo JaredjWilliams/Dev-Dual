@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/user.service';
-import {jsonToProfile, jsonToProfiles} from "../Transformers/JsonToProfile";
+import { jsonToProfiles} from "../Transformers/JsonToProfile";
 import {Profile} from "../models/profile";
 import {errorMessage} from "../utils/utils";
 
@@ -18,9 +18,7 @@ export class DuelComponent implements OnInit {
 
   constructor(private userService: UserService) { }
 
-  ngOnInit(): void {
-    // this.profiles  = objectsToProfiles(TEST_USERS)
-  }
+  ngOnInit(): void { }
 
   receiveUsernameOne(valueEmitted: string) {
     this.usernameOne = valueEmitted;
@@ -31,13 +29,10 @@ export class DuelComponent implements OnInit {
   }
 
   onSubmit() {
-    this.userService.duelUsers(this.usernameOne, this.usernameTwo).toPromise()
+    this.errorMessage = "";
+    this.userService.duelUsers(this.usernameOne, this.usernameTwo)
       .then((data: any) => jsonToProfiles(data))
-      .then((profiles) => this.profiles = profiles)
-      .then(() => console.log(this.profiles))
-      .catch(error => {
-        this.errorMessage = errorMessage(error.status);
-        console.log(this.errorMessage)
-      })
+      .then((profiles: Profile[]) => this.profiles = profiles)
+      .catch((error: { status: number; }) => { this.errorMessage = errorMessage(error.status) })
   }
 }

@@ -10,16 +10,13 @@ import {errorMessage} from "../utils/utils";
   styleUrls: ['./inspect.component.css']
 })
 export class InspectComponent implements OnInit {
-
   username: string = ""
   profiles: Profile[] = [];
   errorMessage: string = "";
 
-
   constructor(private userService: UserService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   receiveUsername(valueEmitted: string) {
     this.username = valueEmitted;
@@ -30,10 +27,6 @@ export class InspectComponent implements OnInit {
     this.userService.inspectUser(this.username)
       .then(res => jsonToProfile(res))
       .then(profile => this.profiles = [profile])
-      .then(() => console.log(this.profiles))
-      .catch(error => {
-        this.errorMessage = errorMessage(error.status);
-        console.log(this.errorMessage)
-      })
+      .catch(error => this.errorMessage = errorMessage(error.status) )
   }
 }
